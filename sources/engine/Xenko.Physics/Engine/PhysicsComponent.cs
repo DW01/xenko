@@ -12,6 +12,7 @@ using Xenko.Core.MicroThreading;
 using Xenko.Engine.Design;
 using Xenko.Physics;
 using Xenko.Physics.Engine;
+using Xenko.Rendering;
 
 namespace Xenko.Engine
 {
@@ -27,7 +28,7 @@ namespace Xenko.Engine
         static PhysicsComponent()
         {
             // Preload proper libbulletc native library (depending on CPU type)
-            NativeLibrary.PreloadLibrary("libbulletc.dll");
+            NativeLibrary.PreloadLibrary("libbulletc.dll", typeof(PhysicsComponent));
         }
 
         protected PhysicsComponent()
